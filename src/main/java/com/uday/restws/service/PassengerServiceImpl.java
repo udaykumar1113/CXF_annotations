@@ -2,8 +2,6 @@ package com.uday.restws.service;
 
 import com.uday.restws.model.Passenger;
 import org.springframework.stereotype.Service;
-
-import javax.ws.rs.QueryParam;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +33,15 @@ public class PassengerServiceImpl implements PassengerService {
     public Passenger addPassenger(Passenger passenger) {
         passenger.setId(counter++);
         passengerList.add(passenger);
+        return passenger;
+    }
+
+    @Override
+    public Passenger addFormPassenger(String firstName, String lastName) {
+        Passenger passenger=new Passenger();
+        passenger.setPassengerName(firstName+" "+lastName);
+        System.out.println("First Name "+firstName);
+        passenger.setId(counter++);
         return passenger;
     }
 }
