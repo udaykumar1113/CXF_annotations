@@ -37,10 +37,10 @@ public class PassengerServiceImpl implements PassengerService {
     }
 
     @Override
-    public Passenger addFormPassenger(String firstName, String lastName) {
+    public Passenger addFormPassenger(String firstName, String lastName, String agent) {
         Passenger passenger=new Passenger();
         passenger.setPassengerName(firstName+" "+lastName);
-        System.out.println("First Name "+firstName);
+        System.out.println("First Name "+firstName+" agent is "+agent);
         passenger.setId(counter++);
         return passenger;
     }
