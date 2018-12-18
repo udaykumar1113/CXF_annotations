@@ -10,11 +10,16 @@ import java.util.List;
 @Consumes("application/xml")
 public interface PassengerService {
 
+    @Path("/passengers")
     @GET
-    @Path("/patients")
-    public List<Passenger> getPassengers();
+    List<Passenger> getPassengers();
 
+    @Path("/passengerspage")
+    @GET
+    List<Passenger> getPassengersPage(@QueryParam("start") int start,
+                                      @QueryParam("size") int size);
+
+    @Path("/passenger")
     @POST
-    @Path("/patient")
-    public int addPassenger(Passenger passenger);
+    Passenger addPassenger(Passenger passenger);
 }

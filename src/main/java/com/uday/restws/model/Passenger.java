@@ -2,7 +2,7 @@ package com.uday.restws.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+@XmlRootElement(name="Passenger")
 public class Passenger {
     private int id;
     private String passengerName;
